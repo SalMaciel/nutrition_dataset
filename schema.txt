@@ -1,0 +1,106 @@
+Table food_description{
+  NDB_No integer(5)
+  FdGrp_cd integer(4)
+  Long_Desc varchar
+  Shrt_Desc varchar
+  ComName varchar
+  ManufacName varchar
+  Survey boolean
+  Ref_desc varchar
+  Refuse percentage
+  SciName varchar
+  N_Factor float
+  Pro_Factor float
+  Fat_Factor float
+  CHO_Factor float
+}
+
+Table food_group{
+  FdGrp_Cd integer(4)
+  FdGrp_Desc varchar
+}
+
+Table langual{
+  NDB_No integer(5)
+  Factor_Code varchar(5)
+}
+
+Table langual_description{
+  Factor_Code varchar(5)
+  Description varchar
+}
+
+Table nutrition_data{
+  NDB_No integer(5)
+  Nutr_no integer
+  Nutr_Val float
+  Num_Data_Pts integer
+  Std_Error float
+  Src_Cd integer
+  Deriv_Cd float
+  Ref_NDB_No float
+  Add_Nutr_Mark float
+  Num_Studies integer
+  Min float
+  Max float
+  DF float
+  Low_EB float
+  Up_EB float
+  Stat_cmt varchar
+  AddMod_Date date
+}
+
+Table nutrition_definition{
+  Nutr_no integer(5)
+  Units
+  Tagname
+  NutrDesc
+  Num_Dec
+  SR_Order
+}
+
+Table source_code{
+  Src_Cd
+  SrcCd_Desc
+}
+
+Table data_derivation_code{
+  Deriv_Cd
+  Deriv_Desc
+}
+
+Table weight{
+  NDB_No
+  Seq
+  Amount
+  Msre_Desc
+  Gm_Wgt
+  Num_Data_Pts
+  Std_Dev
+}
+
+Table footnote{
+  NDB_No
+  Footnt_No
+  Footnt_Typ
+  Nutr_No
+  Footnt_Txt
+}
+
+Table data_source_link{
+  NDB_No
+  Nutr_No
+  DataSrc_ID
+}
+
+Table data_sources{
+  DataSrc_ID
+  Authors
+  Title
+  Year
+  Journal
+  Vol_City
+  Issue_State
+  Start_Page
+  End_Page
+}
