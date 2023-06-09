@@ -1,5 +1,5 @@
 Table food_description{
-  NDB_No integer(5)
+  NDB_No integer(5) [primary key]
   FdGrp_cd integer(4)
   Long_Desc varchar
   Shrt_Desc varchar
@@ -21,7 +21,7 @@ Table food_group{
 }
 
 Table langual{
-  NDB_No integer(5)
+  NDB_No integer(5) [primary key]
   Factor_Code varchar(5)
 }
 
@@ -31,7 +31,7 @@ Table langual_description{
 }
 
 Table nutrition_data{
-  NDB_No integer(5)
+  NDB_No integer(5) [primary key]
   Nutr_no integer
   Nutr_Val float
   Num_Data_Pts integer
@@ -70,7 +70,7 @@ Table data_derivation_code{
 }
 
 Table weight{
-  NDB_No integer(5)
+  NDB_No integer(5) [primary key]
   Seq integer(5)
   Amount integer(2)
   Msre_Desc varchar
@@ -80,7 +80,7 @@ Table weight{
 }
 
 Table footnote{
-  NDB_No integer(5)
+  NDB_No integer(5) [primary key]
   Footnt_No integer
   Footnt_Typ varchar
   Nutr_No integer(3)
@@ -88,7 +88,7 @@ Table footnote{
 }
 
 Table data_source_link{
-  NDB_No integer(5)
+  NDB_No integer(5) [primary key]
   Nutr_No integer(3)
   DataSrc_ID varchar(3)
 }
@@ -104,3 +104,4 @@ Table data_sources{
   Start_Page integer(4)
   End_Page integer(4)
 }
+ref database_no: food_description.NDB_No < weight.NDB_No
