@@ -1,6 +1,6 @@
 Table food_description{
   NDB_No integer(5) pk unique [not null]
-  FdGrp_cd integer(4) [not null]
+  FdGrp_Cd integer(4) [not null]
   Long_Desc varchar [not null]
   Shrt_Desc varchar [not null]
   ComName varchar
@@ -32,7 +32,7 @@ Table langual_description{
 
 Table nutrition_data{
   NDB_No integer(5) pk unique [not null]
-  Nutr_no integer(3) pk unique [not null]
+  Nutr_No integer(3) pk [not null]
   Nutr_Val float [not null]
   Num_Data_Pts integer [not null]
   Std_Error float
@@ -51,7 +51,7 @@ Table nutrition_data{
 }
 
 Table nutrition_definition{
-  Nutr_no integer(3) pk unique [not null]
+  Nutr_No integer(3) pk unique [not null]
   Units varchar (2) [not null]
   Tagname varchar
   NutrDesc varchar [not null]
@@ -65,7 +65,7 @@ Table source_code{
 }
 
 Table data_derivation_code{
-  Deriv_Cd integer(2) pk unique [not null]
+  Deriv_Cd float pk unique [not null]
   Deriv_Desc varchar [not null]
 }
 
@@ -104,12 +104,24 @@ Table data_sources{
   Start_Page integer(4)
   End_Page integer(4)
 }
-ref database_no: food_description.NDB_No - weight.NDB_No
+ref database_no: food_description.NDB_No < weight.NDB_No
 
-ref database_no: food_description.NDB_No - data_source_link.NDB_No
+ref database_no: nutrition_data.NDB_No < data_source_link.NDB_No
 
-ref database_no: food_description.NDB_No - footnote.NDB_No
+ref database_no: food_description.NDB_No < footnote.NDB_No
 
 ref database_no: food_description.NDB_No - nutrition_data.NDB_No
 
 ref database_no: food_description.NDB_No - langual.NDB_No
+
+ref database_no: food_group.FdGrp_Cd <> food_description.FdGrp_Cd
+
+ref database_no: langual_description.Factor_Code < langual.Factor_Code
+
+ref database_no: nutrition_definition.Nutr_No < nutrition_data.Nutr_No
+
+ref database_no: data_source_link.DataSrc_ID > data_sources.DataSrc_ID
+
+ref database_no: data_derivation_code.Deriv_Cd < nutrition_data.Deriv_Cd
+
+ref database_no: source_code.Src_Cd < nutrition_data.Src_Cd
