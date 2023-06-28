@@ -1,3 +1,16 @@
+DROP TABLE food_description;
+DROP TABLE food_group;
+DROP TABLE langual;
+DROP TABLE langual_description;
+DROP TABLE nutrition_data;
+DROP TABLE nutrition_definition;
+DROP TABLE source_code;
+DROP TABLE data_derivation_code;
+DROP TABLE weight;
+DROP TABLE footnote;
+DROP TABLE data_source_link;
+DROP TABLE data_sources;
+
 CREATE TABLE food_description(
 	NDB_No INT(5) NOT NULL,
 	FdGrp_Cd INT(4) NOT NULL,
@@ -14,6 +27,11 @@ CREATE TABLE food_description(
 	Fat_Factor FLOAT,
 	CHO_Factor float,
 	PRIMARY KEY (NDB_No),
+	FOREIGN KEY (NDB_No) REFERENCES weight(NDB_No),
+	FOREIGN KEY (NDB_No) REFERENCES langual(NDB_No),
+	FOREIGN KEY (NDB_No) REFERENCES nutrition_data(NDB_No),
+	FOREIGN KEY (NDB_No) REFERENCES footnote(NDB_No),
+	FOREIGN KEY (FdGrp_Cd) REFERENCES food_group(FdGrp_Cd),
 	UNIQUE (NDB_No)
 );
 CREATE TABLE food_group(
@@ -27,6 +45,7 @@ CREATE TABLE langual(
 	NDB_No INT(5) UNIQUE NOT NULL,
 	Factor_Code VARCHAR(5) UNIQUE NOT NULL,
 	PRIMARY KEY (NDB_No),
+	FOREIGN KEY (Factor_Code) REFERENCES langual_description(Factor_Code),
 	UNIQUE (NDB_No)
 );
 
@@ -34,7 +53,7 @@ CREATE TABLE langual_description(
 	Factor_Code VARCHAR(5) NOT NULL,
 	Description VARCHAR NUOT NULL,
 	PRIMARY KEY (Factor_Code),
-	UNIQUE (Factor_code)
+	UNIQUE (Factor_Code)
 );
 
 CREATE TABLE nutrition_data(
@@ -56,6 +75,10 @@ CREATE TABLE nutrition_data(
 	Stat_cmt VARCHAR,
 	AddMod_Date DATE,
 	PRIMARY KEY (NDB_No),
+	FOREIGN KEY (NDB_No) REFERENCES data_source_link(NDB_No),
+	FOREIGN KEY (Nutr_No) REFERENCES nutrition_definition(Nutr_No),
+	FOREIGN KEY (Src_Cd) REFERENCES source_code(Src_Cd),
+	FOREIGN KEY (Deriv_Cd) REFERENCES data_derivation_code(Deriv_Cd),
 	UNIQUE (NDB_No)
 );
 
@@ -123,5 +146,6 @@ CREATE TABLE data_sources(
 	Start_Page INT(4),
 	End_Page INT(4),
 	PRIMARY KEY (DataSrc_ID),
+	FOREIGN KEY (DataSrc_ID) REFERENCES data_source_link(DataSrc_ID),
 	UNIQUE (DataSrc_ID)
 );
