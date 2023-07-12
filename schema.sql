@@ -43,7 +43,7 @@ CREATE TABLE food_group(
 
 CREATE TABLE nutrition_definition(
 	Nutr_No INT NOT NULL,
-	Units VARCHAR(2) NOT NULL,
+	Units VARCHAR(4) NOT NULL,
 	Tagname VARCHAR,
 	NutrDesc VARCHAR NOT NULL,
 	Num_Dec INT NOT NULL,
