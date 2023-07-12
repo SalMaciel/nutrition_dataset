@@ -1,15 +1,15 @@
 DROP TABLE food_description;
-DROP TABLE food_group;
-DROP TABLE langual;
-DROP TABLE langual_description;
-DROP TABLE nutrition_data;
-DROP TABLE nutrition_definition;
-DROP TABLE source_code;
-DROP TABLE data_derivation_code;
-DROP TABLE weight;
-DROP TABLE footnote;
-DROP TABLE data_source_link;
 DROP TABLE data_sources;
+DROP TABLE footnote;
+DROP TABLE weight;
+DROP TABLE nutrition_data;
+DROP TABLE langual;
+DROP TABLE source_code;
+DROP TABLE nutrition_definition;
+DROP TABLE food_group;
+DROP TABLE langual_description;
+DROP TABLE data_derivation_code;
+DROP TABLE data_source_link;
 
 CREATE TABLE data_source_link(
 	NDB_No INT NOT NULL,
