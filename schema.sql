@@ -21,7 +21,7 @@ CREATE TABLE data_source_link(
 );
 
 CREATE TABLE data_derivation_code(
-	Deriv_Cd FLOAT NOT NULL,
+	Deriv_Cd VARCHAR NOT NULL,
 	Deriv_Desc VARCHAR NOT NULL,
 	PRIMARY KEY (Deriv_Cd),
 	UNIQUE (Deriv_Cd)
@@ -74,7 +74,7 @@ CREATE TABLE nutrition_data(
 	Num_Data_Pts INT NOT NULL,
 	Std_Error FLOAT,
 	Src_Cd INT NOT NULL,
-	Deriv_Cd FLOAT,
+	Deriv_Cd VARCHAR,
 	Ref_NDB_No FLOAT,
 	Add_Nutr_Mark FLOAT,
 	Num_Studies INT,
