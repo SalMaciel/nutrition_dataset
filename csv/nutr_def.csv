@@ -84,8 +84,8 @@ Nutr_no,Units,Tagname,NutrDesc,Num_Dec,SR_Order
 517,g,PRO_G,Proline,3,17900
 518,g,SER_G,Serine,3,18000
 521,g,HYP,Hydroxyproline,3,18100
-573,mg,,"Vitamin E, added",2,7920
-578,µg,,"Vitamin B-12, added",2,7340
+573,mg,nan,"Vitamin E, added",2,7920
+578,µg,nan,"Vitamin B-12, added",2,7340
 601,mg,CHOLE,Cholesterol,0,15700
 605,g,FATRN,"Fatty acids, total trans",3,15400
 606,g,FASAT,"Fatty acids, total saturated",3,9700
@@ -123,8 +123,8 @@ Nutr_no,Units,Tagname,NutrDesc,Num_Dec,SR_Order
 662,g,F16D1T,16:1 t,3,11900
 663,g,F18D1T,18:1 t,3,12300
 664,g,F22D1T,22:1 t,3,12700
-665,g,,18:2 t not further defined,3,13800
-666,g,,18:2 i,3,13700
+665,g,nan,18:2 t not further defined,3,13800
+666,g,nan,18:2 i,3,13700
 669,g,F18D2TT,"18:2 t,t",3,13600
 670,g,F18D2CLA,18:2 CLAs,3,13300
 671,g,F24D1C,24:1 c,3,12800
@@ -144,7 +144,7 @@ Nutr_no,Units,Tagname,NutrDesc,Num_Dec,SR_Order
 852,g,F20D3N3,20:3 n-3,3,14500
 853,g,F20D3N6,20:3 n-6,3,14600
 855,g,F20D4N6,20:4 n-6,3,14900
-856,g,,18:3i,3,14200
+856,g,nan,18:3i,3,14200
 857,g,F21D5,21:5,3,15100
 858,g,F22D4,22:4,3,15160
 859,g,F18D1TN7,18:1-11 t (18:1t n-7),3,12310

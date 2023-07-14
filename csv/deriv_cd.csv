@@ -37,7 +37,7 @@ MC,Manufacturer supplied; Calculated by manufacturer or unknown if analytical or
 ML,Manufacturer supplied; Value upon which manufacturer based label claim for fortified/enriched nutrient
 NC,Nutrient that is based on other nutrient/s; calculated rather than analyzed
 NP,Nutrient that is based on other nutrient/s; calculated by difference or summed (with or without activity factors)
-Ex. Pr,
+Ex. Pr,nan
 NR,"Nutrient that is based on other nutrient/s; value used directly, ex. Nut.#204 from Nut.#298"
 O,Other procedure used from imputing
 PAE,Based on physical composition; Derived from analytical data; Estimated physical composition
