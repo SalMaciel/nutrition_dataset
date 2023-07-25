@@ -31,7 +31,7 @@ Table langual_description{
 }
 
 Table nutrition_data{
-  NDB_No integer(5) pk unique [not null]
+  NDB_No integer(5) pk [not null]
   Nutr_No integer(3) pk [not null]
   Nutr_Val float [not null]
   Num_Data_Pts integer [not null]
@@ -106,11 +106,17 @@ Table data_sources{
 }
 ref database_no: food_description.NDB_No < weight.NDB_No
 
-ref database_no: nutrition_data.NDB_No < data_source_link.NDB_No
+ref database_no: nutrition_data.NDB_No <> data_source_link.NDB_No
+
+ref database_no: nutrition_data.Nutr_No <> data_source_link.Nutr_No
+
+ref database_no: nutrition_data.NDB_No <> weight.NDB_No
+
+ref database_no: nutrition_data.NDB_No <> footnote.NDB_No
 
 ref database_no: food_description.NDB_No < footnote.NDB_No
 
-ref database_no: food_description.NDB_No - nutrition_data.NDB_No
+ref database_no: food_description.NDB_No < nutrition_data.NDB_No
 
 ref database_no: food_description.NDB_No - langual.NDB_No
 

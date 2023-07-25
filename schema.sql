@@ -14,10 +14,9 @@ DROP TABLE data_source_link;
 CREATE TABLE data_source_link(
 	NDB_No INT NOT NULL,
 	Nutr_No INT NOT NULL,
-	DataSrc_ID VARCHAR(3) NOT NULL,
+	DataSrc_ID VARCHAR(5) NOT NULL,
 	PRIMARY KEY (NDB_No),
-	UNIQUE (NDB_No),
-	UNIQUE (DataSrc_ID)
+	UNIQUE (NDB_No)
 );
 
 CREATE TABLE data_derivation_code(
